@@ -25,12 +25,25 @@ export function ThemeProvider({
   children,
   defaultTheme = "light",
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(defaultTheme);
+  const [theme, setTheme] = useState<Theme>(() => {
+    // Check if we're in the browser
+    if (typeof window !== "undefined") {
+      // Try to get the theme from localStorage
+      const savedTheme = localStorage.getItem("theme") as Theme | null;
+      // Return the saved theme if it exists and is valid, otherwise return defaultTheme
+      return savedTheme === "dark" || savedTheme === "light"
+        ? savedTheme
+        : defaultTheme;
+    }
+    return defaultTheme;
+  });
 
   useEffect(() => {
     const root = window.document.documentElement;
     root.classList.remove("light", "dark");
     root.classList.add(theme);
+    // Save the theme preference to localStorage whenever it changes
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   const value = {
