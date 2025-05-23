@@ -68,15 +68,15 @@ export default function RootLayout({
       >
         <ThemeProvider defaultTheme="light">
           <div className="sticky top-0 z-50 border-dashed border-b border-[var(--color-border)] bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="mx-auto max-w-[1400px] 1xl:border-dashed border-l border-r border-[var(--color-border)] h-14 border-none px-[1rem]">
+            <div className="mx-auto max-w-[1400px] 1xl:border-dashed border-l border-r border-[var(--color-border)] h-14 border-none px-[1rem] lg:px-[2rem]">
               <Header />
             </div>
           </div>
-          <main className="mx-auto max-w-[1400px] 1xl:border-dashed border-l border-r border-[var(--color-border)] flex-1 border-none py-10 bg-[var(--color-background)] px-[1rem]">
+          <main className="mx-auto max-w-[1400px] 1xl:border-dashed border-l border-r border-[var(--color-border)] flex-1 border-none py-10 bg-[var(--color-background)] px-[1rem] lg:px-[2rem]">
             {children}
           </main>
           <div className="border-dashed border-t border-[var(--color-border)]">
-            <div className="mx-auto max-w-[1400px] 1xl:border-dashed border-l border-r border-[var(--color-border)] border-none px-[1rem] flex items-center">
+            <div className="mx-auto max-w-[1400px] 1xl:border-dashed border-l border-r border-[var(--color-border)] border-none px-[1rem] lg:px-[2rem] flex items-center">
               <Footer />
             </div>
           </div>
