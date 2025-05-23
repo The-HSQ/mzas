@@ -76,7 +76,7 @@ export default function RootLayout({
             {children}
           </main>
           <div className="border-dashed border-t border-[var(--color-border)]">
-            <div className="mx-auto max-w-[1400px] 1xl:border-dashed border-l border-r border-[var(--color-border)] h-14 border-none px-[1rem] flex items-center">
+            <div className="mx-auto max-w-[1400px] 1xl:border-dashed border-l border-r border-[var(--color-border)] border-none px-[1rem] flex items-center">
               <Footer />
             </div>
           </div>

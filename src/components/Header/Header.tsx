@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/components/ui/ThemeProvider";
 import {
@@ -56,6 +57,7 @@ const socialLinks = [
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -88,7 +90,12 @@ const Header = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary)]"
+                className={cn(
+                  "text-sm font-medium transition-colors",
+                  pathname === item.href
+                    ? "text-[var(--color-primary)]"
+                    : "text-[var(--color-text-muted)] hover:text-[var(--color-primary)]"
+                )}
               >
                 {item.title}
               </Link>
@@ -196,7 +203,12 @@ const Header = () => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="block text-base font-medium text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary)] hover:bg-[var(--color-background-hover)] rounded-lg px-0"
+                  className={cn(
+                    "block text-base font-medium transition-colors hover:bg-[var(--color-background-hover)] rounded-lg px-0",
+                    pathname === item.href
+                      ? "text-[var(--color-primary)]"
+                      : "text-[var(--color-text-muted)] hover:text-[var(--color-primary)]"
+                  )}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.title}
