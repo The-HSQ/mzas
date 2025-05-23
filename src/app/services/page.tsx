@@ -79,8 +79,8 @@ export default function ServicesPage() {
         <h1 className="text-4xl font-bold tracking-tight">Our Services</h1>
         <p className="text-lg text-[var(--color-text-muted)] max-w-3xl">
           Comprehensive business solutions designed to drive your success in the
-          digital age. From strategy to implementation, we're here to help you
-          achieve your goals.
+          digital age. From strategy to implementation, we&apos;re here to help
+          you achieve your goals.
         </p>
       </section>
 
@@ -127,7 +127,7 @@ export default function ServicesPage() {
           Ready to Transform Your Business?
         </h2>
         <p className="text-[var(--color-text-muted)] mb-6 max-w-2xl mx-auto">
-          Let's discuss how our services can help you achieve your business
+          Let&apos;s discuss how our services can help you achieve your business
           goals. Our team of experts is ready to provide tailored solutions for
           your needs.
         </p>

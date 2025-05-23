@@ -51,8 +51,9 @@ export default function ContactPage() {
       <section className="space-y-6">
         <h1 className="text-4xl font-bold tracking-tight">Contact Us</h1>
         <p className="text-lg text-[var(--color-text-muted)] max-w-3xl">
-          Have questions or ready to start a project? We're here to help. Reach
-          out to us and let's discuss how we can support your business goals.
+          Have questions or ready to start a project? We&apos;re here to help.
+          Reach out to us and let&apos;s discuss how we can support your
+          business goals.
         </p>
       </section>
 
