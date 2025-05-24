@@ -36,9 +36,6 @@ const About = () => {
 
       {/* Work Process Section */}
       <WorkProcess />
-
-      {/* Careers Section */}
-      {/* <Careers /> */}
     </div>
   );
 };
