@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -58,6 +58,11 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -65,6 +70,24 @@ const Header = () => {
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  const renderThemeToggle = () => {
+    if (!mounted) return null;
+
+    return (
+      <div
+        onClick={toggleTheme}
+        className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] p-1.5 cursor-pointer hover:bg-[var(--color-background-alt)] rounded-full hover:shadow-sm transition-all duration-300 ease-in-out"
+        aria-label="Toggle theme"
+      >
+        {theme === "dark" ? (
+          <Sun className="size-5" />
+        ) : (
+          <Moon className="size-5" />
+        )}
+      </div>
+    );
   };
 
   return (
@@ -106,67 +129,30 @@ const Header = () => {
         {/* Desktop CTA Buttons and Theme Toggle */}
         <div className="hidden md:flex items-center gap-2">
           {/* Social Media Links */}
-          <div className=" flex items-center gap-2 ">
+          <div className="flex items-center gap-2">
             {socialLinks.map((social) => (
-              <Button
+              <Link
                 key={social.title}
-                variant="ghost"
-                size="icon"
-                asChild
-                className="rounded-full"
+                href={social.href}
+                target="_blank"
+                className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors p-1.5 hover:bg-[var(--color-background-alt)] rounded-full hover:shadow-sm"
                 aria-label={social.title}
               >
-                <Link
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <social.icon className="size-5" />
-                </Link>
-              </Button>
+                <social.icon className="size-5" />
+              </Link>
             ))}
           </div>
-          {/* <Button variant="ghost" size="sm" asChild>
-            <Link href="/login">Sign In</Link>
-          </Button>
-          <Button size="sm" asChild>
-            <Link href="/register">Get Started</Link>
-          </Button> */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            className="rounded-full"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? (
-              <Sun className="size-5" />
-            ) : (
-              <Moon className="size-5" />
-            )}
-          </Button>
+
+          {renderThemeToggle()}
         </div>
 
         {/* Mobile Menu Button */}
         <div className="flex items-center gap-2 md:hidden">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            className="rounded-full"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? (
-              <Sun className="size-5" />
-            ) : (
-              <Moon className="size-5" />
-            )}
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
+          {renderThemeToggle()}
+          <div
             onClick={toggleMobileMenu}
             aria-label="Toggle menu"
+            className="rounded-full hover:bg-[var(--color-background-alt)] hover:text-[var(--color-primary)] hover:shadow-sm transition-all duration-300 ease-in-out p-1.5 cursor-pointer"
           >
             {isMobileMenuOpen ? (
               <X
@@ -178,7 +164,7 @@ const Header = () => {
             ) : (
               <Menu className="size-5" />
             )}
-          </Button>
+          </div>
         </div>
       </div>
 
@@ -223,40 +209,17 @@ const Header = () => {
               {/* Social Media Links for Mobile */}
               <div className="flex justify-center gap-4 py-2">
                 {socialLinks.map((social) => (
-                  <Button
+                  <Link
                     key={social.title}
-                    variant="ghost"
-                    size="icon"
-                    asChild
-                    className="rounded-full"
+                    href={social.href}
+                    target="_blank"
+                    className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors p-1.5 hover:bg-[var(--color-background-alt)] rounded-full hover:shadow-sm"
                     aria-label={social.title}
                   >
-                    <Link
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <social.icon className="size-5" />
-                    </Link>
-                  </Button>
+                    <social.icon className="size-5" />
+                  </Link>
                 ))}
               </div>
-
-              {/* <Button
-                variant="ghost"
-                size="lg"
-                asChild
-                className="w-full justify-center font-medium"
-              >
-                <Link href="/login">Sign In</Link>
-              </Button>
-              <Button
-                size="lg"
-                asChild
-                className="w-full justify-center font-medium"
-              >
-                <Link href="/register">Get Started</Link>
-              </Button> */}
             </div>
           </nav>
         </div>
