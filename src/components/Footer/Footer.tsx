@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import {
@@ -8,6 +9,8 @@ import {
   Phone,
   MapPin,
 } from "lucide-react";
+import Image from "next/image";
+import { useTheme } from "@/components/ui/ThemeProvider";
 
 const navigationMenu = [
   { title: "Home", href: "/" },
@@ -35,19 +38,28 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const { theme } = useTheme();
+
   return (
     <footer className="w-full py-6 sm:py-8 ">
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="space-y-3 sm:space-y-4">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="h-7 w-7 sm:h-8 sm:w-8 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-white font-bold text-sm sm:text-base">
-                M
-              </div>
-              <span className="font-bold text-lg sm:text-xl text-[var(--color-text)]">
-                MZAS
-              </span>
+            <Link href="/" className="relative w-24 h-10 flex items-center">
+              <Image
+                src={
+                  theme === "dark"
+                    ? "/logo/dark-theme.png"
+                    : "/logo/white-theme.png"
+                }
+                alt="MZAS LLC"
+                fill
+                sizes="(max-width: 768px) 80px, 96px"
+                className="object-contain"
+                priority
+                quality={100}
+              />
             </Link>
             <p className="text-xs sm:text-sm text-[var(--color-text-muted)] max-w-[280px] sm:max-w-none">
               Providing innovative business solutions and professional services

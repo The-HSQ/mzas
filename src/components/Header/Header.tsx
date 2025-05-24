@@ -14,7 +14,7 @@ import {
   Instagram,
   Linkedin,
 } from "lucide-react";
-// import Image from "next/image";
+import Image from "next/image";
 
 const navigationMenu = [
   {
@@ -94,16 +94,20 @@ const Header = () => {
       <div className="flex h-14 items-center justify-between">
         {/* Logo, Brand and Navigation Links */}
         <div className="flex items-center gap-8">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="relative h-8 w-8">
-              {/* Replace with your logo */}
-              <div className="h-8 w-8 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-white font-bold">
-                M
-              </div>
-            </div>
-            <span className="font-bold text-xl text-[var(--color-text)]">
-              MZAS
-            </span>
+          <Link href="/" className="relative w-24 h-10 flex items-center">
+            <Image
+              src={
+                theme === "dark"
+                  ? "/logo/dark-theme.png"
+                  : "/logo/white-theme.png"
+              }
+              alt="MZAS LLC"
+              fill
+              sizes="(max-width: 768px) 80px, 96px"
+              className="object-contain"
+              priority
+              quality={100}
+            />
           </Link>
 
           {/* Desktop Navigation Links */}
