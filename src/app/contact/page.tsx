@@ -23,7 +23,7 @@ const contactInfo = [
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto space-y-12 md:space-y-16">
+    <div className="space-y-10">
       {/* Hero Section */}
       <section className="space-y-4 md:space-y-6 text-center md:text-left">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
@@ -47,14 +47,14 @@ export default function ContactPage() {
                   key={index}
                   className="flex items-start gap-4 p-4 sm:p-6 rounded-lg border border-dashed border-[var(--color-border)] bg-[var(--color-background)]"
                 >
-                  <div className="p-2 sm:p-3 rounded-lg bg-[var(--color-primary)]/10">
+                  <div className="p-2 sm:p-3 rounded-lg bg-[var(--color-primary)]/10 shrink-0">
                     <info.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--color-primary)]" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="font-semibold text-sm sm:text-base mb-1">
                       {info.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-[var(--color-text-muted)]">
+                    <p className="text-sm sm:text-base text-[var(--color-text-muted)] break-words">
                       {info.details}
                     </p>
                   </div>
@@ -68,19 +68,19 @@ export default function ContactPage() {
             <h2 className="text-2xl font-semibold">Business Hours</h2>
             <div className="p-4 sm:p-6 rounded-lg border border-dashed border-[var(--color-border)] bg-[var(--color-background)]">
               <div className="space-y-3">
-                <div className="flex justify-between text-sm sm:text-base">
+                <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-2 text-sm sm:text-base">
                   <span className="text-[var(--color-text-muted)]">
                     Monday - Friday
                   </span>
                   <span className="font-medium">9:00 AM - 6:00 PM</span>
                 </div>
-                <div className="flex justify-between text-sm sm:text-base">
+                <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-2 text-sm sm:text-base">
                   <span className="text-[var(--color-text-muted)]">
                     Saturday
                   </span>
                   <span className="font-medium">10:00 AM - 4:00 PM</span>
                 </div>
-                <div className="flex justify-between text-sm sm:text-base">
+                <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-2 text-sm sm:text-base">
                   <span className="text-[var(--color-text-muted)]">Sunday</span>
                   <span className="font-medium">Closed</span>
                 </div>
