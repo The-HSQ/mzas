@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import Image from "next/image";
 
 const HeroSection = () => {
@@ -35,6 +35,7 @@ const HeroSection = () => {
             <Image
               src="/hero-image.png"
               alt="App showcase"
+              loading="lazy"
               className="object-contain w-full h-full"
               width={380}
               height={480}
