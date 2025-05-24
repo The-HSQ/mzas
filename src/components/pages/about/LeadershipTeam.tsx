@@ -61,9 +61,11 @@ const LeadershipTeam = () => {
                     alt={member.name}
                     width={288}
                     height={288}
+                    loading="lazy"
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 288px"
                     priority={index === 0}
+                    quality={100}
                   />
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-100 transition-opacity duration-300" />

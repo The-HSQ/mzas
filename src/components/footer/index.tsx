@@ -54,6 +54,7 @@ const Footer = () => {
                     : "/logo/white-theme.png"
                 }
                 alt="MZAS LLC"
+                loading="lazy"
                 fill
                 sizes="(max-width: 768px) 80px, 96px"
                 className="object-contain"
