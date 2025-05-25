@@ -5,15 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/components/ui/ThemeProvider";
-import {
-  Sun,
-  Moon,
-  Menu,
-  X,
-  Facebook,
-  Instagram,
-  Linkedin,
-} from "lucide-react";
+import { Sun, Moon, Menu, X, Linkedin } from "lucide-react";
 import Image from "next/image";
 
 const navigationMenu = [
@@ -36,16 +28,6 @@ const navigationMenu = [
 ];
 
 const socialLinks = [
-  {
-    title: "Facebook",
-    href: "https://facebook.com/your-company",
-    icon: Facebook,
-  },
-  {
-    title: "Instagram",
-    href: "https://instagram.com/your-company",
-    icon: Instagram,
-  },
   {
     title: "LinkedIn",
     href: "https://linkedin.com/company/your-company",
@@ -102,7 +84,6 @@ const Header = () => {
                   : "/logo/white-theme.png"
               }
               alt="MZAS LLC"
-              loading="lazy"
               fill
               sizes="(max-width: 768px) 80px, 96px"
               className="object-contain"

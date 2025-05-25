@@ -1,6 +1,8 @@
 import React from "react";
 import { Button } from "../../ui/button";
 import Image from "next/image";
+import Link from "next/link";
+// import { Linkedin } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -21,9 +23,20 @@ const HeroSection = () => {
           <p className="text-[var(--color-text-muted)] text-xl md:text-2xl mb-8 max-w-md font-medium">
             Apps & Websites Tailored to Your Vision
           </p>
-          <Button variant="outline" size="lg" className="px-8 py-3 font-bold">
-            EXPLORE
-          </Button>
+          <div className="flex gap-4">
+            <Button variant="outline" size="lg" className="px-8 py-3 font-bold">
+              <Link href="/contact">Contact Us</Link>
+            </Button>
+
+            {/* <Link
+              href="https://www.linkedin.com/company/mzasllc"
+              target="_blank"
+              className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors p-1.5 hover:bg-[var(--color-background-alt)] rounded-full hover:shadow-sm"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="size-5" />
+            </Link> */}
+          </div>
         </div>
 
         {/* Right: Clean image area */}

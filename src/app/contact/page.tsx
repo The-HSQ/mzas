@@ -6,19 +6,18 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    details: "Kahuta, Pakistan",
-    coordinates: { lat: 30, lng: 70 }, // Replace with your actual coordinates
+    details: "Maryland, USA",
   },
   {
     icon: Phone,
     title: "Call Us",
-    details: "+1 234 567 890",
+    details: "+1 301 221 5994",
   },
-  {
-    icon: Mail,
-    title: "Email Us",
-    details: "contact@mzas.com",
-  },
+  // {
+  //   icon: Mail,
+  //   title: "Email Us",
+  //   details: "",
+  // },
 ];
 
 export default function ContactPage() {
@@ -74,11 +73,9 @@ export default function ContactPage() {
                 <span className="font-medium">9:00 AM - 6:00 PM</span>
               </div>
               <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-2 text-sm sm:text-base">
-                <span className="text-[var(--color-text-muted)]">Saturday</span>
-                <span className="font-medium">10:00 AM - 4:00 PM</span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-2 text-sm sm:text-base">
-                <span className="text-[var(--color-text-muted)]">Sunday</span>
+                <span className="text-[var(--color-text-muted)]">
+                  Saturday - Sunday
+                </span>
                 <span className="font-medium">Closed</span>
               </div>
             </div>

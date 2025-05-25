@@ -61,7 +61,6 @@ const LeadershipTeam = () => {
                     alt={member.name}
                     width={288}
                     height={288}
-                    loading="lazy"
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 288px"
                     priority={index === 0}

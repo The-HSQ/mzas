@@ -1,14 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import { Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
 import { useTheme } from "@/components/ui/ThemeProvider";
 
@@ -20,16 +13,6 @@ const navigationMenu = [
 ];
 
 const socialLinks = [
-  {
-    title: "Facebook",
-    href: "https://facebook.com/your-company",
-    icon: Facebook,
-  },
-  {
-    title: "Instagram",
-    href: "https://instagram.com/your-company",
-    icon: Instagram,
-  },
   {
     title: "LinkedIn",
     href: "https://linkedin.com/company/your-company",
@@ -54,7 +37,6 @@ const Footer = () => {
                     : "/logo/white-theme.png"
                 }
                 alt="MZAS LLC"
-                loading="lazy"
                 fill
                 sizes="(max-width: 768px) 80px, 96px"
                 className="object-contain"
@@ -95,18 +77,16 @@ const Footer = () => {
             <ul className="space-y-2 sm:space-y-3">
               <li className="flex items-start sm:items-center space-x-2 text-xs sm:text-sm text-[var(--color-text-muted)]">
                 <MapPin className="h-4 w-4 flex-shrink-0 mt-0.5 sm:mt-0" />
-                <span className="break-words">
-                  123 Business Street, City, Country
-                </span>
+                <span className="break-words">Maryland, USA</span>
               </li>
               <li className="flex items-center space-x-2 text-xs sm:text-sm text-[var(--color-text-muted)]">
                 <Phone className="h-4 w-4 flex-shrink-0" />
-                <span>+1 234 567 890</span>
+                <span>+1 301 221 5994</span>
               </li>
-              <li className="flex items-center space-x-2 text-xs sm:text-sm text-[var(--color-text-muted)]">
+              {/* <li className="flex items-center space-x-2 text-xs sm:text-sm text-[var(--color-text-muted)]">
                 <Mail className="h-4 w-4 flex-shrink-0" />
-                <span className="break-all">contact@mzas.com</span>
-              </li>
+                <span className="break-all">mzasllc@gmail.com</span>
+              </li> */}
             </ul>
           </div>
 
