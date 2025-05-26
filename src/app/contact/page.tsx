@@ -62,7 +62,7 @@ export default function ContactPage() {
         </div>
 
         {/* Business Hours */}
-        <div className="flex flex-col gap-3">
+        {/* <div className="flex flex-col gap-3">
           <h2 className="text-2xl font-semibold">Business Hours</h2>
           <div className="p-4 sm:p-6 rounded-lg border border-dashed border-[var(--color-border)] bg-[var(--color-background)]">
             <div className="space-y-3">
@@ -80,7 +80,7 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
