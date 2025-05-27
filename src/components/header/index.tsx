@@ -169,7 +169,7 @@ const Header = () => {
       >
         <div className="mx-4">
           <nav className="flex flex-col py-4">
-            <div className=" flex flex-col gap-2.5 ">
+            <div className=" flex flex-col gap-4 ">
               {navigationMenu.map((item) => (
                 <Link
                   key={item.href}
@@ -187,7 +187,7 @@ const Header = () => {
               ))}
             </div>
 
-            <div className="my-4 w-full h-[1px] bg-[var(--color-border)]"></div>
+            {/* <div className="my-4 w-full h-[1px] bg-[var(--color-border)]"></div> */}
 
             {/* Mobile CTA Buttons */}
             <div className="flex flex-col gap-2 px-3">
