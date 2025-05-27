@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/components/ui/ThemeProvider";
-import { Sun, Moon, Menu, X, Linkedin } from "lucide-react";
+import { Sun, Moon, Menu, X } from "lucide-react";
 import Image from "next/image";
 
 const navigationMenu = [
@@ -27,13 +27,13 @@ const navigationMenu = [
   },
 ];
 
-const socialLinks = [
-  {
-    title: "LinkedIn",
-    href: "https://linkedin.com/company/your-company",
-    icon: Linkedin,
-  },
-];
+// const socialLinks = [
+//   {
+//     title: "LinkedIn",
+//     href: "https://linkedin.com/company/your-company",
+//     icon: Linkedin,
+//   },
+// ];
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -114,7 +114,7 @@ const Header = () => {
         {/* Desktop CTA Buttons and Theme Toggle */}
         <div className="hidden md:flex items-center gap-2">
           {/* Social Media Links */}
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             {socialLinks.map((social) => (
               <Link
                 key={social.title}
@@ -126,7 +126,7 @@ const Header = () => {
                 <social.icon className="size-5" />
               </Link>
             ))}
-          </div>
+          </div> */}
 
           {renderThemeToggle()}
         </div>
@@ -192,7 +192,7 @@ const Header = () => {
             {/* Mobile CTA Buttons */}
             <div className="flex flex-col gap-2 px-3">
               {/* Social Media Links for Mobile */}
-              <div className="flex justify-center gap-4 py-2">
+              {/* <div className="flex justify-center gap-4 py-2">
                 {socialLinks.map((social) => (
                   <Link
                     key={social.title}
@@ -204,7 +204,7 @@ const Header = () => {
                     <social.icon className="size-5" />
                   </Link>
                 ))}
-              </div>
+              </div> */}
             </div>
           </nav>
         </div>

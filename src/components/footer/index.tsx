@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { Linkedin, Phone, MapPin } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 import Image from "next/image";
 import { useTheme } from "@/components/ui/ThemeProvider";
 
@@ -12,13 +12,13 @@ const navigationMenu = [
   { title: "Contact", href: "/contact" },
 ];
 
-const socialLinks = [
-  {
-    title: "LinkedIn",
-    href: "https://linkedin.com/company/your-company",
-    icon: Linkedin,
-  },
-];
+// const socialLinks = [
+//   {
+//     title: "LinkedIn",
+//     href: "https://linkedin.com/company/your-company",
+//     icon: Linkedin,
+//   },
+// ];
 
 const Footer = () => {
   const { theme } = useTheme();
@@ -26,7 +26,7 @@ const Footer = () => {
   return (
     <footer className="w-full py-6 sm:py-8 ">
       <div className="max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="space-y-3 sm:space-y-4">
             <Link href="/" className="relative w-24 h-10 flex items-center">
@@ -51,7 +51,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-3 sm:space-y-4">
+          <div className="space-y-3 sm:space-y-4 flex flex-col md:items-center">
             <h3 className="font-semibold text-[var(--color-text)] text-sm sm:text-base">
               Quick Links
             </h3>
@@ -91,7 +91,7 @@ const Footer = () => {
           </div>
 
           {/* Social Links */}
-          <div className="space-y-3 sm:space-y-4">
+          {/* <div className="space-y-3 sm:space-y-4">
             <h3 className="font-semibold text-[var(--color-text)] text-sm sm:text-base">
               Follow Us
             </h3>
@@ -109,7 +109,7 @@ const Footer = () => {
                 </Link>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Copyright */}
