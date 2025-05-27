@@ -12,7 +12,7 @@ const CompanyStory = () => {
             When We Started
           </h3>
           <p className="text-[var(--color-text-muted)] text-lg">
-            Founded in 2025, MZAS emerged from a vision to revolutionize the
+            Founded in 2023, MZAS emerged from a vision to revolutionize the
             digital landscape. Our journey began with a simple yet powerful
             idea: to create innovative solutions that empower businesses to
             thrive in the digital age.
