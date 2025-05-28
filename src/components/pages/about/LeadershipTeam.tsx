@@ -10,7 +10,7 @@ const LeadershipTeam = () => {
     {
       name: "Abdul Shakoor",
       role: "Chief Executive Officer",
-      image: "/abdul-shakoor.jpg",
+      image: "/abdul-shakoor.avif",
       bio: "A visionary leader with extensive experience in business strategy and digital transformation. Abdul brings over a decade of expertise in scaling businesses and driving innovation. His leadership vision focuses on creating sustainable growth through technological excellence and client-centric solutions.",
       expertise: [
         "Business Strategy",
@@ -21,7 +21,7 @@ const LeadershipTeam = () => {
     {
       name: "Muhammad Hassan Ali",
       role: "Chief Technology Officer",
-      image: "/hassan-ali.jpg",
+      image: "/hassan-ali.avif",
       bio: "A technology innovator with deep expertise in software architecture and emerging technologies. Hassan has pioneered several groundbreaking solutions in the industry, bringing cutting-edge innovations to MZAS. His technical leadership has been instrumental in establishing our reputation for technological excellence.",
       expertise: [
         "Software Architecture",
@@ -66,7 +66,7 @@ const LeadershipTeam = () => {
                     height={288}
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 288px"
-                    priority={index === 0}
+                    priority
                     quality={100}
                   />
                   {/* Gradient overlay */}

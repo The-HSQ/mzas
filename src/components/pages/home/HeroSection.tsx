@@ -82,7 +82,7 @@ const HeroSection = () => {
             /> */}
 
             <video
-              src="/videos/hero-3.mp4"
+              src="/videos/hero-3.webm"
               autoPlay
               muted
               loop
