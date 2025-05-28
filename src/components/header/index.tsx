@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -37,13 +37,8 @@ const navigationMenu = [
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, mounted } = useTheme();
   const pathname = usePathname();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -77,19 +72,21 @@ const Header = () => {
         {/* Logo, Brand and Navigation Links */}
         <div className="flex items-center gap-8">
           <Link href="/" className="relative w-24 h-10 flex items-center">
-            <Image
-              src={
-                theme === "dark"
-                  ? "/logo/dark-theme.png"
-                  : "/logo/white-theme.png"
-              }
-              alt="MZAS LLC"
-              fill
-              sizes="(max-width: 768px) 80px, 96px"
-              className="object-contain"
-              priority
-              quality={100}
-            />
+            {mounted && (
+              <Image
+                src={
+                  theme === "dark"
+                    ? "/logo/dark-theme.png"
+                    : "/logo/white-theme.png"
+                }
+                alt="MZAS LLC"
+                fill
+                sizes="(max-width: 768px) 80px, 96px"
+                className="object-contain"
+                priority
+                quality={100}
+              />
+            )}
           </Link>
 
           {/* Desktop Navigation Links */}

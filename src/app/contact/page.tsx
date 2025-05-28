@@ -43,7 +43,7 @@ export default function ContactPage() {
             {contactInfo.map((info, index) => (
               <div
                 key={index}
-                className="flex items-start gap-4 p-4 sm:p-6 rounded-lg border border-dashed border-[var(--color-border)] bg-[var(--color-background)]"
+                className="flex items-start gap-4 p-4 sm:p-6 rounded-lg border border-dashed border-[var(--color-border)]"
               >
                 <div className="p-2 sm:p-3 rounded-lg bg-[var(--color-primary)]/10 shrink-0">
                   <info.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--color-primary)]" />

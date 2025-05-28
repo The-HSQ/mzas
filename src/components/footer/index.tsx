@@ -21,7 +21,7 @@ const navigationMenu = [
 // ];
 
 const Footer = () => {
-  const { theme } = useTheme();
+  const { theme, mounted } = useTheme();
 
   return (
     <footer className="w-full py-6 sm:py-8 ">
@@ -30,19 +30,21 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-3 sm:space-y-4">
             <Link href="/" className="relative w-24 h-10 flex items-center">
-              <Image
-                src={
-                  theme === "dark"
-                    ? "/logo/dark-theme.png"
-                    : "/logo/white-theme.png"
-                }
-                alt="MZAS LLC"
-                fill
-                sizes="(max-width: 768px) 80px, 96px"
-                className="object-contain"
-                priority
-                quality={100}
-              />
+              {mounted && (
+                <Image
+                  src={
+                    theme === "dark"
+                      ? "/logo/dark-theme.png"
+                      : "/logo/white-theme.png"
+                  }
+                  alt="MZAS LLC"
+                  fill
+                  sizes="(max-width: 768px) 80px, 96px"
+                  className="object-contain"
+                  priority
+                  quality={100}
+                />
+              )}
             </Link>
             <p className="text-xs sm:text-sm text-[var(--color-text-muted)] max-w-[280px] sm:max-w-none">
               Providing innovative business solutions and professional services

@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ui/ThemeProvider";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import ClientLayout from "@/components/ClientLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -67,23 +65,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--color-background)] text-[var(--color-text)] overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-[var(--color-text)] overflow-x-hidden`}
       >
-        <ThemeProvider defaultTheme="dark">
-          <div className="sticky top-0 z-50 border-dashed border-b border-[var(--color-border)] bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/90">
-            <div className="mx-auto max-w-[1400px] 1xl:border-dashed border-l border-r border-[var(--color-border)] h-14 border-none px-[1rem] lg:px-[2rem]">
-              <Header />
-            </div>
-          </div>
-          <main className="mx-auto max-w-[1400px] 1xl:border-dashed border-l border-r border-[var(--color-border)] flex-1 border-none py-10 bg-[var(--color-background)] px-[1rem] lg:px-[2rem]">
-            {children}
-          </main>
-          <div className="border-dashed border-t border-[var(--color-border)]">
-            <div className="mx-auto max-w-[1400px] 1xl:border-dashed border-l border-r border-[var(--color-border)] border-none px-[1rem] lg:px-[2rem] flex items-center">
-              <Footer />
-            </div>
-          </div>
-        </ThemeProvider>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

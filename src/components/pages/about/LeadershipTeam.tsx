@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { ArrowLeftRightIcon } from "lucide-react";
+import { motion } from "framer-motion";
 
 const LeadershipTeam = () => {
   const teamMembers = [
@@ -44,18 +47,18 @@ const LeadershipTeam = () => {
         {teamMembers.map((member, index) => (
           <div
             key={index}
-            className={`flex flex-col md:flex-row gap-8 items-center ${
+            className={`flex flex-col md:flex-row gap-14 items-center ${
               index % 2 === 1 ? "md:flex-row-reverse" : ""
             }`}
           >
             {/* Image Section */}
             <div
-              className={`w-full lg:w-1/3 flex justify-center items-center gap-6 ${
+              className={`w-full lg:w-1/3 flex justify-center items-center gap-10 ${
                 index % 2 === 1 ? "flex-row-reverse" : ""
               }`}
             >
               <div className="relative group">
-                <div className="relative h-72 w-72 rounded-full overflow-hidden border-4 border-[var(--color-primary)] shadow-lg group-hover:shadow-xl transition-all duration-300">
+                <div className="relative h-72 w-72 rounded-full overflow-hidden border-4 border-dashed border-[var(--color-primary)] shadow-lg group-hover:shadow-xl transition-all duration-300">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -70,8 +73,16 @@ const LeadershipTeam = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-100 transition-opacity duration-300" />
                 </div>
                 {/* Decorative circles */}
-                <div className="absolute -inset-4 rounded-full border-2 border-dashed -z-10 border-[var(--color-primary)]/40 transition-all duration-300" />
-                <div className="absolute -inset-8 rounded-full border border-dashed -z-20 border-[var(--color-primary)]/20 transition-all duration-300" />
+                <motion.div
+                  className="absolute -inset-4 rounded-full border-2 border-dashed -z-10 border-[var(--color-primary)]/40 transition-all duration-300"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 100, repeat: Infinity }}
+                />
+                <motion.div
+                  className="absolute -inset-8 rounded-full border border-dashed -z-20 border-[var(--color-primary)]/20 transition-all duration-300"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 150, repeat: Infinity }}
+                />
               </div>
 
               <div className="hidden md:flex items-center justify-center">

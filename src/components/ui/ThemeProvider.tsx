@@ -11,11 +11,13 @@ type ThemeProviderProps = {
 
 type ThemeProviderState = {
   theme: Theme;
+  mounted: boolean;
   setTheme: (theme: Theme) => void;
 };
 
 const initialState: ThemeProviderState = {
   theme: "dark",
+  mounted: false,
   setTheme: () => null,
 };
 
@@ -25,29 +27,30 @@ export function ThemeProvider({
   children,
   defaultTheme = "dark",
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(() => {
-    // Check if we're in the browser
-    if (typeof window !== "undefined") {
-      // Try to get the theme from localStorage
-      const savedTheme = localStorage.getItem("theme") as Theme | null;
-      // Return the saved theme if it exists and is valid, otherwise return defaultTheme
-      return savedTheme === "dark" || savedTheme === "light"
-        ? savedTheme
-        : defaultTheme;
-    }
-    return defaultTheme;
-  });
+  const [mounted, setMounted] = useState(false);
+  const [theme, setTheme] = useState<Theme>(defaultTheme);
 
   useEffect(() => {
+    // Only try to get the theme from localStorage after mounting
+    const savedTheme = localStorage.getItem("theme") as Theme | null;
+    if (savedTheme === "dark" || savedTheme === "light") {
+      setTheme(savedTheme);
+    }
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const root = window.document.documentElement;
     root.classList.remove("light", "dark");
     root.classList.add(theme);
-    // Save the theme preference to localStorage whenever it changes
     localStorage.setItem("theme", theme);
-  }, [theme]);
+  }, [theme, mounted]);
 
   const value = {
     theme,
+    mounted,
     setTheme: (theme: Theme) => {
       setTheme(theme);
     },
