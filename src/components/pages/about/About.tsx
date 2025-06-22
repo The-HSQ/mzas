@@ -1,6 +1,6 @@
 import React from "react";
 import CompanyStory from "./CompanyStory";
-import LeadershipTeam from "./LeadershipTeam";
+// import LeadershipTeam from "./LeadershipTeam";
 import CompanyValues from "./CompanyValues";
 import WorkProcess from "./WorkProcess";
 
