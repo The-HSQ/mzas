@@ -27,7 +27,7 @@ const About = () => {
 			{/* Leadership Team Section */}
 			{/* <LeadershipTeam /> */}
 
-			<div className=" w-[280px] border-1 border-dashed border-[var(--color-border)] mx-auto"></div>
+			{/* <div className=" w-[280px] border-1 border-dashed border-[var(--color-border)] mx-auto"></div> */}
 
 			{/* Values Section */}
 			<CompanyValues />
