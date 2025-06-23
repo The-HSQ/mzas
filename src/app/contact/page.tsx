@@ -8,11 +8,11 @@ const contactInfo = [
     title: "Visit Us",
     details: "Maryland, USA",
   },
-  {
-    icon: Phone,
-    title: "Call Us",
-    details: "+1 301 221 5994",
-  },
+  // {
+  //   icon: Phone,
+  //   title: "Call Us",
+  //   details: "+1 301 221 5994",
+  // },
   // {
   //   icon: Mail,
   //   title: "Email Us",
