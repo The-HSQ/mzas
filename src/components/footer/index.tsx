@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { Phone, MapPin } from "lucide-react";
+// import { Phone, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import Image from "next/image";
 import { useTheme } from "@/components/ui/ThemeProvider";
 

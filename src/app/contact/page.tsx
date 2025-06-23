@@ -1,6 +1,7 @@
 "use client";
 
-import { MapPin, Phone } from "lucide-react";
+// import { MapPin, Phone } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 const contactInfo = [
   {
