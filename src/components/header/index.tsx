@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { useTheme } from '@/components/ui/ThemeProvider';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 
@@ -27,44 +26,13 @@ const navigationMenu = [
   },
 ];
 
-// const socialLinks = [
-//   {
-//     title: "LinkedIn",
-//     href: "https://linkedin.com/company/your-company",
-//     icon: Linkedin,
-//   },
-// ];
-
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, mounted } = useTheme();
   const pathname = usePathname();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
-  // const toggleTheme = () => {
-  //   setTheme(theme === 'dark' ? 'light' : 'dark');
-  // };
-
-  // const renderThemeToggle = () => {
-  //   if (!mounted) return null;
-
-  //   return (
-  //     <div
-  //       onClick={toggleTheme}
-  //       className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] p-1.5 cursor-pointer hover:bg-[var(--color-background-alt)] rounded-full hover:shadow-sm transition-all duration-300 ease-in-out"
-  //       aria-label="Toggle theme"
-  //     >
-  //       {theme === 'dark' ? (
-  //         <Sun className="size-5" />
-  //       ) : (
-  //         <Moon className="size-5" />
-  //       )}
-  //     </div>
-  //   );
-  // };
 
   return (
     <header className="w-full relative">
@@ -89,22 +57,19 @@ const Header = () => {
 
         {/* Centered Logo */}
         <div className="flex justify-center">
-          <Link href="/" className="relative w-24 h-10 flex items-center">
-            {mounted && (
-              <Image
-                src={
-                  theme === 'dark'
-                    ? '/logo/dark_mode.png'
-                    : '/logo/light_mode.png'
-                }
-                alt="MZAS LLC"
-                fill
-                sizes="(max-width: 768px) 80px, 96px"
-                className="object-contain"
-                priority
-                quality={100}
-              />
-            )}
+          <Link
+            href="/"
+            className="relative w-24 h-10 flex items-center"
+          >
+            <Image
+              src="/logo/dark_mode.png"
+              alt="MZAS LLC"
+              fill
+              sizes="(max-width: 768px) 80px, 96px"
+              className="object-contain"
+              priority
+              quality={100}
+            />
           </Link>
         </div>
 
@@ -179,24 +144,6 @@ const Header = () => {
                   {item.title}
                 </Link>
               ))}
-            </div>
-
-            {/* Mobile CTA Buttons */}
-            <div className="flex flex-col gap-2 px-3">
-              {/* Social Media Links for Mobile */}
-              {/* <div className="flex justify-center gap-4 py-2">
-                {socialLinks.map((social) => (
-                  <Link
-                    key={social.title}
-                    href={social.href}
-                    target="_blank"
-                    className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors p-1.5 hover:bg-[var(--color-background-alt)] rounded-full hover:shadow-sm"
-                    aria-label={social.title}
-                  >
-                    <social.icon className="size-5" />
-                  </Link>
-                ))}
-              </div> */}
             </div>
           </nav>
         </div>

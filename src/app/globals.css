@@ -47,37 +47,37 @@
     --color-border-dark: #475569;
   }
 
-  .light {
-    /* Primary Colors */
+  /* .light {
+    Primary Colors
     --color-primary: #7c3aed;
-    /* Rich purple */
+    Rich purple
     --color-primary-light: #a78bfa;
     --color-primary-dark: #5b21b6;
 
-    /* Secondary Colors */
+    Secondary Colors
     --color-secondary: #0ea5e9;
-    /* Vibrant sky blue */
+    Vibrant sky blue
     --color-secondary-light: #38bdf8;
     --color-secondary-dark: #0284c7;
 
-    /* Background Colors */
+    Background Colors
     --color-background: #ffffff;
     --color-background-alt: #f8fafc;
     --color-background-muted: #f1f5f9;
 
-    /* Text Colors */
+    Text Colors
     --color-text: #0f172a;
     --color-text-muted: #475569;
     --color-text-light: #64748b;
 
-    /* Status Colors */
+    Status Colors
     --color-error: #ef4444;
-    /* Clear red */
+    Clear red
 
-    /* Border Colors */
+    Border Colors
     --color-border: #e2e8f0;
     --color-border-dark: #cbd5e1;
-  }
+  } */
 
   body {
     @apply bg-[var(--color-background)] text-[var(--color-text)];
@@ -105,10 +105,10 @@
     @apply border-[var(--color-border)];
   }
 
-  /* Dark mode specific styles */
-  .light body {
+  /* Light mode specific styles */
+  /* .light body {
     color-scheme: light dark;
-  }
+  } */
 
   /* Add smooth transitions for theme switching */
   :root {
