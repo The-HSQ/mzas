@@ -35,8 +35,10 @@ const Footer = () => {
 								<Image
 									src={
 										theme === "dark"
-											? "/logo/dark-theme.png"
-											: "/logo/white-theme.png"
+											// ? "/logo/dark-theme.png"
+											// : "/logo/white-theme.png"
+											? "/logo/dark_mode.png"
+											: "/logo/light_mode.png"
 									}
 									alt="MZAS LLC"
 									fill
