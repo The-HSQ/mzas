@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/components/ui/ThemeProvider';
-import { Sun, Moon, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 
 const navigationMenu = [
@@ -37,34 +37,34 @@ const navigationMenu = [
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, setTheme, mounted } = useTheme();
+  const { theme, mounted } = useTheme();
   const pathname = usePathname();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
+  // const toggleTheme = () => {
+  //   setTheme(theme === 'dark' ? 'light' : 'dark');
+  // };
 
-  const renderThemeToggle = () => {
-    if (!mounted) return null;
+  // const renderThemeToggle = () => {
+  //   if (!mounted) return null;
 
-    return (
-      <div
-        onClick={toggleTheme}
-        className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] p-1.5 cursor-pointer hover:bg-[var(--color-background-alt)] rounded-full hover:shadow-sm transition-all duration-300 ease-in-out"
-        aria-label="Toggle theme"
-      >
-        {theme === 'dark' ? (
-          <Sun className="size-5" />
-        ) : (
-          <Moon className="size-5" />
-        )}
-      </div>
-    );
-  };
+  //   return (
+  //     <div
+  //       onClick={toggleTheme}
+  //       className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] p-1.5 cursor-pointer hover:bg-[var(--color-background-alt)] rounded-full hover:shadow-sm transition-all duration-300 ease-in-out"
+  //       aria-label="Toggle theme"
+  //     >
+  //       {theme === 'dark' ? (
+  //         <Sun className="size-5" />
+  //       ) : (
+  //         <Moon className="size-5" />
+  //       )}
+  //     </div>
+  //   );
+  // };
 
   return (
     <header className="w-full relative">
