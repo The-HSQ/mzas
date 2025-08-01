@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -15,68 +15,68 @@
 
 @layer base {
   :root {
-    /* Primary Colors */
-    --color-primary: #7C3AED;
-    /* Rich purple */
-    --color-primary-light: #A78BFA;
-    --color-primary-dark: #5B21B6;
-
-    /* Secondary Colors */
-    --color-secondary: #0EA5E9;
-    /* Vibrant sky blue */
-    --color-secondary-light: #38BDF8;
-    --color-secondary-dark: #0284C7;
-
-    /* Background Colors */
-    --color-background: #FFFFFF;
-    --color-background-alt: #F8FAFC;
-    --color-background-muted: #F1F5F9;
-
-    /* Text Colors */
-    --color-text: #0F172A;
-    --color-text-muted: #475569;
-    --color-text-light: #64748B;
-
-    /* Status Colors */
-    --color-error: #EF4444;
-    /* Clear red */
-
-    /* Border Colors */
-    --color-border: #E2E8F0;
-    --color-border-dark: #CBD5E1;
-  }
-
-  .dark {
     /* Primary Colors - Dark Mode */
-    --color-primary: #A78BFA;
+    --color-primary: #a78bfa;
     /* Lighter purple for dark mode */
-    --color-primary-light: #C4B5FD;
-    --color-primary-dark: #7C3AED;
+    --color-primary-light: #c4b5fd;
+    --color-primary-dark: #7c3aed;
 
     /* Secondary Colors - Dark Mode */
-    --color-secondary: #38BDF8;
+    --color-secondary: #38bdf8;
     /* Brighter sky blue for dark mode */
-    --color-secondary-light: #7DD3FC;
-    --color-secondary-dark: #0EA5E9;
+    --color-secondary-light: #7dd3fc;
+    --color-secondary-dark: #0ea5e9;
 
     /* Background Colors - Dark Mode */
-    --color-background: #0F172A;
+    --color-background: #0f172a;
     /* Deep blue-gray */
-    --color-background-alt: #1E293B;
+    --color-background-alt: #1e293b;
     --color-background-muted: #334155;
 
     /* Text Colors - Dark Mode */
-    --color-text: #F8FAFC;
-    --color-text-muted: #CBD5E1;
-    --color-text-light: #94A3B8;
+    --color-text: #f8fafc;
+    --color-text-muted: #cbd5e1;
+    --color-text-light: #94a3b8;
 
     /* Status Colors - Dark Mode */
-    --color-error: #F87171;
+    --color-error: #f87171;
     /* Softer red for dark mode */
 
     /* Border Colors - Dark Mode */
     --color-border: #334155;
     --color-border-dark: #475569;
+  }
+
+  .light {
+    /* Primary Colors */
+    --color-primary: #7c3aed;
+    /* Rich purple */
+    --color-primary-light: #a78bfa;
+    --color-primary-dark: #5b21b6;
+
+    /* Secondary Colors */
+    --color-secondary: #0ea5e9;
+    /* Vibrant sky blue */
+    --color-secondary-light: #38bdf8;
+    --color-secondary-dark: #0284c7;
+
+    /* Background Colors */
+    --color-background: #ffffff;
+    --color-background-alt: #f8fafc;
+    --color-background-muted: #f1f5f9;
+
+    /* Text Colors */
+    --color-text: #0f172a;
+    --color-text-muted: #475569;
+    --color-text-light: #64748b;
+
+    /* Status Colors */
+    --color-error: #ef4444;
+    /* Clear red */
+
+    /* Border Colors */
+    --color-border: #e2e8f0;
+    --color-border-dark: #cbd5e1;
   }
 
   body {
@@ -106,13 +106,13 @@
   }
 
   /* Dark mode specific styles */
-  .dark body {
-    @apply bg-[var(--color-background)] text-[var(--color-text)];
+  .light body {
+    color-scheme: light dark;
   }
 
   /* Add smooth transitions for theme switching */
   :root {
-    color-scheme: light dark;
+    @apply bg-[var(--color-background)] text-[var(--color-text)];
   }
 
   /* Ensure proper color inheritance */

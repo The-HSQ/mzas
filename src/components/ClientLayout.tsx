@@ -14,7 +14,7 @@ export default function ClientLayout({
   const isHome = pathname === "/";
 
   return (
-    <ThemeProvider defaultTheme="dark">
+    <ThemeProvider defaultTheme="light">
       <div className="sticky top-0 z-50 border-dashed border-b border-[var(--color-border)] bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/90">
         <div className="mx-auto max-w-[1400px] 1xl:border-dashed border-l border-r border-[var(--color-border)] h-14 border-none px-[1rem] lg:px-[2rem]">
           <Header />
