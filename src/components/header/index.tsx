@@ -36,7 +36,7 @@ const Header = () => {
 
   return (
     <header className="w-full relative">
-      <div className="flex h-14 items-center justify-between md:justify-start gap-20">
+      <div className="flex h-14 items-center justify-between md:justify-start gap-12">
         {/* Logo */}
         <div className="flex justify-center">
           <Link
@@ -56,7 +56,7 @@ const Header = () => {
         </div>
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex items-center gap-12">
+        <nav className="hidden md:flex items-center gap-6">
           {navigationMenu.slice(0, 4).map((item) => (
             <Link
               key={item.href}
