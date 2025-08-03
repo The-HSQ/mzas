@@ -37,7 +37,7 @@ const HeroSection = () => {
               }}
               variant="outline"
               size="lg"
-              className="px-8 py-3 font-bold border-2 border-[var(--color-primary)] dark:border-[var(--color-primary)] bg-[var(--color-primary)] dark:bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] dark:hover:bg-[var(--color-primary-hover)] hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primary)] text-white text-shadow-md dark:text-[var(--color-text)]"
+              className="px-8 py-3 font-bold border-2 border-[var(--color-primary)] dark:border-[var(--color-primary)] bg-[var(--color-primary)]/50 dark:bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] dark:hover:bg-[var(--color-primary-hover)] hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primary)] text-white text-shadow-md dark:text-[var(--color-text)] duration-400"
             >
               Contact Us
             </Button>

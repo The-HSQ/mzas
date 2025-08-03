@@ -36,26 +36,8 @@ const Header = () => {
 
   return (
     <header className="w-full relative">
-      <div className="flex h-14 items-center justify-between md:justify-center gap-12">
-        {/* Left Navigation Links */}
-        <nav className="hidden md:flex items-center gap-12">
-          {navigationMenu.slice(0, 2).map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                'text-md font-medium transition-colors',
-                pathname === item.href
-                  ? 'text-[var(--color-primary)]'
-                  : 'text-[var(--color-text-muted)] hover:text-[var(--color-primary)]'
-              )}
-            >
-              {item.title}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Centered Logo */}
+      <div className="flex h-14 items-center justify-between md:justify-start gap-20">
+        {/* Logo */}
         <div className="flex justify-center">
           <Link
             href="/"
@@ -73,9 +55,9 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Right Navigation Links */}
+        {/* Navigation Links */}
         <nav className="hidden md:flex items-center gap-12">
-          {navigationMenu.slice(2, 4).map((item) => (
+          {navigationMenu.slice(0, 4).map((item) => (
             <Link
               key={item.href}
               href={item.href}
