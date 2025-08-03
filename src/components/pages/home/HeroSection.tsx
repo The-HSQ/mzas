@@ -68,7 +68,7 @@ const HeroSection = () => {
         >
           {/* Place your image here */}
           <motion.div
-            className="max-w-[270px] max-h-[340px] sm:max-w-[380px] sm:max-h-[480px] flex items-center justify-center rounded-3xl bg-[var(--color-background-alt)] border-dashed border border-[var(--color-primary)]/75 overflow-hidden"
+            className="max-w-[270px] max-h-[340px] sm:max-w-[380px] sm:max-h-[480px] flex items-center justify-center rounded-3xl bg-[var(--color-background-alt)] border-dashed border overflow-hidden"
             // animate={{ opacity: isHoveringImage ? 0.15 : 1 }}
             // transition={{ duration: 0.3 }}
           >
