@@ -46,11 +46,6 @@ export const metadata: Metadata = {
       "MZAS provides innovative business solutions, professional services, and expert consulting to help your business grow and succeed in the digital age.",
     creator: "@mzas",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
   robots: {
     index: true,
     follow: true,
@@ -63,8 +58,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressContentEditableWarning suppressHydrationWarning>
       <body
+        suppressHydrationWarning
+        suppressContentEditableWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-[var(--color-text)] overflow-x-hidden`}
       >
         <ClientLayout>{children}</ClientLayout>
